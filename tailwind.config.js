@@ -10,7 +10,7 @@ export default {
         "green":"#0b4534",
         "ash":"#d7e0e4",
         "accent":"#a8c200",
-      }
+      } 
     },
   },
   plugins: [],
