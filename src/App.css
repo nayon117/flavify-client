@@ -2,6 +2,10 @@
 body{
     font-family: 'Poppins', sans-serif;
   }
+
+header{
+  z-index: 10001 !important;
+}
 .section-container {
     @apply max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16
 }

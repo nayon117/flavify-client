@@ -2,8 +2,28 @@ import { Link } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import logo from "../assets/logo.png";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+
+  const [isSticky, setSticky] = useState(false)
+
+  // handle scroll function
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 0) {
+        setSticky(true)
+      } else {
+        setSticky(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.addEventListener('scroll', handleScroll)
+    }
+  },[])
+
   const navItems = (
     <>
       <li>
@@ -47,8 +67,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <header className="max-w-screen-xl mx-auto">
-      <div className="navbar px-4 md:px-8 lg:px-16 ">
+    <header className="max-w-screen-xl mx-auto fixed top-0 left-0 right-0 transition-all duration-300 ease-in-out">
+      <div className={`navbar px-4 md:px-8 lg:px-16 ${isSticky?'shadow-md bg-base-100 transition-all duration-300 ease-in-out':''} `}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
