@@ -1,13 +1,10 @@
-import img1 from '../../assets/images/home/category/img1.png'
-import img2 from '../../assets/images/home/category/img2.png'
-import img3 from '../../assets/images/home/category/img3.png'
-import img4 from '../../assets/images/home/category/img4.png'
+ 
 const Categories = () => {
     const categoriesItems = [
-        {id:1, title:"Main Dish", desc:"86 dish", img:img1},
-        {id:2, title:"Breakfast", desc:"(12 breakfast)", img:img2},
-        {id:3, title:"Dessert", desc:"(48 dish)", img:img3},
-        {id:4, title:"Browse All", desc:"(1275 dish)", img:img4}
+        {id:1, title:"Main Dish", desc:"86 dish", img:"/images/home/category/img1.png"},
+        {id:2, title:"Breakfast", desc:"(12 breakfast)", img:"/images/home/category/img2.png"},
+        {id:3, title:"Dessert", desc:"(48 dish)", img:"/images/home/category/img3.png"},
+        {id:4, title:"Browse All", desc:"(1275 dish)", img:"/images/home/category/img4.png"}
     ]
   return (
     <div className="section-container py-16">
