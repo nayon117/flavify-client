@@ -1,17 +1,20 @@
 /* eslint-disable react/prop-types */
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 const Cards = ({ item }) => {
-  const [isHeartFilted, setIsHeartFilted] = useState(false)
+  const [isHeartFilted, setIsHeartFilted] = useState(false);
 
-    const handleHeartClick = () => {
-     setIsHeartFilted(!isHeartFilted)
- }
+  const handleHeartClick = () => {
+    setIsHeartFilted(!isHeartFilted);
+  };
 
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl relative">
+      <div onClick={handleHeartClick} className={`rating gap-1 absolute right-2 top-2 p-4 heartStar bg-green ${isHeartFilted?"text-rose-500" : "text-white"} `}>
+        <FaHeart className="h-5 w-5"></FaHeart>
+      </div>
       <Link to={`/menu/${item._id}`}>
         <figure>
           <img
