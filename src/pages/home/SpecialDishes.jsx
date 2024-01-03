@@ -5,10 +5,19 @@ import { useState } from "react";
 import React from "react";
 import { useEffect } from "react";
 import Cards from "../../components/Cards";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const simpleNextArrow = (props) => {
-    const { className, style, onclick } = props;
-    
+    const { className, style, onClick } = props;
+    return (
+        <div onClick={onClick}  className={className} style={{...style, display:"block", background:"red"}} >Next</div>
+    )
+}
+const simplePrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+        <div onClick={onClick}  className={className} style={{...style, display:"block", background:"green"}} >Back</div>
+    )
 }
 
 const SpecialDishes = () => {
@@ -58,17 +67,34 @@ const SpecialDishes = () => {
           slidesToScroll: 1,
         },
       },
-    ],
+      ],
+      nextArrow: <simpleNextArrow />,
+    prevArrow:<simplePrevArrow/>
   };
 
   return (
-    <div className="section-container my-20">
+    <div className="section-container my-20 relative">
       <div className="text-left">
         <h2 className="subtitle">Special Dishes</h2>
         <h2 className="title">Standout Dishes From Our Menu</h2>
       </div>
 
-      <Slider {...settings} className="mt-16">
+          {/* next prev buttons */}
+          <div className="md:absolute right-3 top-8 mb-10 md:mr-16">
+              <button onClick={() => slider?.current?.slickPrev()}
+              className="btn p-2 rounded-full  bg-white text-green "
+              >
+                  <FaAngleLeft className="w-8 h-8 p-1"/>
+              </button>
+              <button onClick={() => slider?.current?.slickNext()}
+                  className="btn p-2 bg-white text-green rounded-full ml-3">
+                 <FaAngleRight className="w-8 h-8 p-1"/>
+              </button>
+          </div>
+
+
+          {/* map recipies */}
+      <Slider {...settings} ref={slider} className="mt-16 overflow-hidden">
         {recipies?.map((item, idx) => (
           <Cards key={idx} item={item}></Cards>
         ))}
