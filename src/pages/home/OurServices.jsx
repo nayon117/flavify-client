@@ -1,12 +1,30 @@
 const OurServices = () => {
-
-    const serviceList = [
-        {id:1, title:"Catering", des:"Delight your guests with our flavors and  presentation", image:"/public/images/home/services/icon1.png"},
-        {id:2, title:"Catering", des:"Delight your guests with our flavors and  presentation", image:"/public/images/home/services/icon1.png"},
-        {id:3, title:"Online Ordering", des:"Explore menu & order with ease using our Online Ordering ", image:"/public/images/home/services/icon3.png"},
-        {id:4, title:"Gift Cards", des:"Give the gift of exceptional dining with Foodi Gift Cards", image:"/public/images/home/services/icon4.png"},
-    ]
-
+  const serviceList = [
+    {
+      id: 1,
+      title: "Catering",
+      des: "Delight your guests with our flavors and  presentation",
+      image: "/public/images/home/services/icon1.png",
+    },
+    {
+      id: 2,
+      title: "Catering",
+      des: "Delight your guests with our flavors and  presentation",
+      image: "/public/images/home/services/icon1.png",
+    },
+    {
+      id: 3,
+      title: "Online Ordering",
+      des: "Explore menu & order with ease using our Online Ordering ",
+      image: "/public/images/home/services/icon3.png",
+    },
+    {
+      id: 4,
+      title: "Gift Cards",
+      des: "Give the gift of exceptional dining with Foodi Gift Cards",
+      image: "/public/images/home/services/icon4.png",
+    },
+  ];
 
   return (
     <div className="section-container my-16">
@@ -28,10 +46,15 @@ const OurServices = () => {
         </div>
         {/* image  */}
         <div className="md:w-1/2">
-          <img
-            src="/images/home/testimonials/testimonials.png"
-            alt="testimonial image"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {serviceList?.map((service) => (
+              <div key={service.id} className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover:border-accent transition-all duration-300 hover:border">
+                <img src={service?.image} alt="icons" className="mx-auto" />
+                <h3 className="pt-3 font-medium">{service?.title}</h3>
+                <p>{service.des}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
