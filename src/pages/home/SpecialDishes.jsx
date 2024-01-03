@@ -1,9 +1,10 @@
-
-
 const SpecialDishes = () => {
   return (
-    <div>
-      <h2>This is SpecialDishes</h2>
+    <div className="section-container my-20">
+      <div className="text-left">
+        <h2 className="subtitle">Special Dishes</h2>
+        <h2 className="title">Standout Dishes From Our Menu</h2>
+      </div>
     </div>
   );
 };
