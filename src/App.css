@@ -9,3 +9,9 @@ header{
 .section-container {
     @apply max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16
 }
+.subtitle{
+  @apply text-accent tracking-wide text-lg font-semibold uppercase
+}
+.title{
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-snug
+}
