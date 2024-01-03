@@ -6,7 +6,7 @@ const Banner = () => {
           <div className="flex-1 space-y-6">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-snug">Indulge in Scrumptious <span className="text-green">Delights!</span></h2>
               <p>Where Each Plate Unfolds a Tale of Culinary Mastery and Passionate Craftsmanship.</p>
-              <button className="btn bg-green text-white py-3 px-4 rounded-full">Order Now</button>
+              <button className="btn bg-green text-white hover:text-green hover:bg-white py-3 px-4 rounded-full">Order Now</button>
           </div>
           {/* image */}
           <div className="flex-1">
