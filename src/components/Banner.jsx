@@ -1,4 +1,4 @@
-import bannerImg from '../assets/images/home/banner.png'
+import bannerImg from '../../public/images/home/banner.png'
 const Banner = () => {
   return (
       <div className="section-container flex flex-col-reverse md:flex-row items-center my-12 ">
