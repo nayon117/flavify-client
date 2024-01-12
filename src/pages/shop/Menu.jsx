@@ -90,7 +90,17 @@ const Menu = () => {
 
       <div className="section-container">
         {/* btns and sorts */}
-        <div>Filtering and sorting</div>
+        <div>
+          {/* all category data */}
+          <div className="flex justify-start items-center gap-8 flex-wrap font-medium my-3">
+            <button onClick={showAll}>All</button>
+            <button onClick={()=>filterItems("salad")}>Salad</button>
+            <button onClick={()=>filterItems("pizza")}>Pizza</button>
+            <button onClick={()=>filterItems("soup")}>Soups</button>
+            <button onClick={()=>filterItems("dessert")}>Dessert</button>
+            <button onClick={()=>filterItems("drinks")}>Drinks</button>
+          </div>
+        </div>
         
         {/* product card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
