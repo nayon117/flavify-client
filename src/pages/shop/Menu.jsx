@@ -13,7 +13,9 @@ const Menu = () => {
            try {
                const res = await fetch('/menu.json')
                const data = await res.json()
-               console.log(data);
+            //    console.log(data);
+               setMenu(data)
+               setFilteredItems(data)
 
            } catch (error) {
             console.log(error);
@@ -22,8 +24,45 @@ const Menu = () => {
         fetchData()
     },[])
 
+    // filtering data based on category
+    const filterItems = (category) => {
+        const filtered = category === "all" ? menu : menu.filter(item => item.category === category);
+        setFilteredItems(filtered);
+        setSelectCategory(category)
+    }
 
+    // show all data
+    const showAll = () => {
+        setFilteredItems(menu)
+        setSelectCategory("all")
+    }
 
+    // sorting based a-z , z-a , low to high
+    const handleSortChange = (option) => {
+        setSortOption(option)
+
+      let sortedItems = [...filterItems]
+      
+      // logic
+      switch(option) {
+        case "A-Z":
+          sortedItems.sort((a,b)=>a.name.localeCompare(b.name))
+          break;
+        case "Z-A":
+          sortedItems.sort((a,b)=>b.name.localeCompare(a.name))
+          break;
+        case "low-to-high":
+          sortedItems.sort((a,b)=>a.price - b.price)
+          break;
+        case "high-to-low":
+          sortedItems.sort((a,b)=>b.price - a.price)
+          break;
+        
+        default:
+          // code block
+          break;
+      }
+    }
 
   return (
     <div>
