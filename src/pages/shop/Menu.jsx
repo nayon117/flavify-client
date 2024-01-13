@@ -61,7 +61,6 @@ const Menu = () => {
           break;
         
         default:
-          // code block
           break;
       }
       setFilteredItems(sortedItems)
@@ -91,7 +90,7 @@ const Menu = () => {
 
       <div className="section-container">
         {/* btns and sorts */}
-        <div>
+        <div className="flex flex-col md:flex-row space-y-3 md:justify-between items-center">
           {/* all category data */}
           <div className="flex justify-start items-center gap-8 flex-wrap font-medium my-3">
             <button onClick={showAll}
@@ -115,7 +114,7 @@ const Menu = () => {
           </div>
 
           {/* sorting based on filtering */}
-          <div>
+          <div className="flex justify-end items-center mb-4">
             <div className="bg-black p-2">
               <FaFilter className="h-4 w-4 text-white"/>
             </div>
@@ -136,7 +135,7 @@ const Menu = () => {
         </div>
         
         {/* product card */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
           {
             filteredItems?.map(item=><Cards key={item._id} item={item}/>)
           }
