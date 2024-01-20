@@ -1,3 +1,4 @@
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Modal = () => {
@@ -5,7 +6,7 @@ const Modal = () => {
     <div>
       <dialog id="my_modal_5" className="modal modal-middle sm:modal-middle">
         <div className="modal-box">
-          <div className="modal-action mt-0">
+          <div className="modal-action flex flex-col justify-center mt-0">
             <form className="card-body " method="dialog">
               <h3 className="font-bold text-lg">Please login!</h3>
               <div className="form-control">
@@ -35,20 +36,36 @@ const Modal = () => {
                   </a>
                 </label>
               </div>
-              <div className="form-control mt-6">
+              {/* error text */}
+
+              {/* login btn */}
+              <div className="form-control mt-2">
                 <input
                   type="submit"
                   value="Login"
                   className="btn bg-first text-white"
                 />
               </div>
-              <p className="text-center my-2">
-                Do not have a account?{" "}
+              <p className="text-center mt-2">
+                Do not have a account?
                 <Link to="signup" className="ml-2 text-second underline">
                   Signup Now
                 </Link>
               </p>
             </form>
+
+            {/* social btns */}
+            <div className="text-center  space-x-3">
+              <button className="btn btn-circle hover:bg-first hover:text-white">
+               <FaGoogle/>
+              </button>
+              <button className="btn btn-circle hover:bg-first hover:text-white">
+               <FaFacebook/>
+              </button>
+              <button className="btn btn-circle hover:bg-first hover:text-white">
+               <FaGithub/>
+              </button>
+            </div>
           </div>
         </div>
       </dialog>
