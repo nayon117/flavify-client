@@ -26,7 +26,7 @@ const simplePrevArrow = (props) => {
     <div
       onClick={onClick}
       className={className}
-      style={{ ...style, display: "block", background: "green" }}
+      style={{ ...style, display: "block", background: "first" }}
     >
       Back
     </div>
@@ -96,13 +96,13 @@ const SpecialDishes = () => {
       <div className="md:absolute right-3 top-8 mb-10 md:mr-16">
         <button
           onClick={() => slider?.current?.slickPrev()}
-          className="btn p-2 rounded-full  bg-white text-green "
+          className="btn p-2 rounded-full  bg-white text-first "
         >
           <FaAngleLeft className="w-8 h-8 p-1" />
         </button>
         <button
           onClick={() => slider?.current?.slickNext()}
-          className="btn p-2 bg-white text-green rounded-full ml-3"
+          className="btn p-2 bg-white text-first rounded-full ml-3"
         >
           <FaAngleRight className="w-8 h-8 p-1" />
         </button>

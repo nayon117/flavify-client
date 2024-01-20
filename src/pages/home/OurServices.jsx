@@ -39,7 +39,7 @@ const OurServices = () => {
               offer exceptional services, blending culinary artistry with warm
               hospitality.
             </blockquote>
-            <button className="btn bg-green text-white rounded-full py-3 px-8">
+            <button className="btn bg-first text-white rounded-full py-3 px-8">
               Explore
             </button>
           </div>
@@ -48,7 +48,10 @@ const OurServices = () => {
         <div className="md:w-1/2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {serviceList?.map((service) => (
-              <div key={service.id} className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover:border-accent transition-all duration-300 hover:border">
+              <div
+                key={service.id}
+                className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-first cursor-pointer hover:border-second transition-all duration-300 hover:border"
+              >
                 <img src={service?.image} alt="icons" className="mx-auto" />
                 <h3 className="pt-3 font-medium">{service?.title}</h3>
                 <p>{service.des}</p>

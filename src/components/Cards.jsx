@@ -12,7 +12,12 @@ const Cards = ({ item }) => {
 
   return (
     <div className="card bg-base-100 shadow-xl relative">
-      <div onClick={handleHeartClick} className={`rating gap-1 absolute right-2 top-2 p-4 heartStar bg-green ${isHeartFilted?"text-rose-500" : "text-white"} `}>
+      <div
+        onClick={handleHeartClick}
+        className={`rating gap-1 absolute right-2 top-2 p-4 heartStar bg-first ${
+          isHeartFilted ? "text-rose-500" : "text-white"
+        } `}
+      >
         <FaHeart className="h-5 w-5"></FaHeart>
       </div>
       <Link to={`/menu/${item._id}`}>
@@ -29,7 +34,7 @@ const Cards = ({ item }) => {
         <p>Description of the item</p>
         <div className="card-actions mt-3 flex justify-between items-center">
           <h5 className="font-semibold">$ {item.price}</h5>
-          <button className="btn bg-green text-white">Add to Cart</button>
+          <button className="btn bg-first text-white">Add to Cart</button>
         </div>
       </div>
     </div>

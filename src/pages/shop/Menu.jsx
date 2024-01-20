@@ -35,14 +35,14 @@ const Menu = () => {
         : menu.filter((item) => item.category === category);
     setFilteredItems(filtered);
     setSelectCategory(category);
-    setCurrentPage(1)
+    setCurrentPage(1);
   };
 
   // show all data
   const showAll = () => {
     setFilteredItems(menu);
     setSelectCategory("all");
-    setCurrentPage(1)
+    setCurrentPage(1);
   };
 
   // sorting based a-z , z-a , low to high
@@ -70,14 +70,14 @@ const Menu = () => {
         break;
     }
     setFilteredItems(sortedItems);
-    setCurrentPage(1)
+    setCurrentPage(1);
   };
 
   // pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
-  const paginate = (pageNumber) =>setCurrentPage(pageNumber)
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -87,13 +87,13 @@ const Menu = () => {
         <div className="space-y-6 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-snug">
             Dive into Delights Of{" "}
-            <span className="text-green">Delectable Food!</span>
+            <span className="text-first">Delectable Food!</span>
           </h2>
           <p>
             Where Each Plate Weaves a Story of Culinary Mastery and Passionate
             Craftsmanship
           </p>
-          <button className="btn bg-green text-white hover:text-green hover:bg-white py-3 px-4 rounded-full">
+          <button className="btn bg-first text-white hover:text-first hover:bg-white py-3 px-4 rounded-full">
             Order Now
           </button>
         </div>
@@ -176,15 +176,19 @@ const Menu = () => {
 
       {/* pagination section */}
       <div className="flex justify-center items-center my-8">
-        {
-          Array.from({ length: Math.ceil(filteredItems.length / itemsPerPage) }).map((_, index) => (
-            <button
-              className={`px-3 py-1 mx-1 rounded-full ${currentPage===index+1 ? "bg-green text-white" : "bg-gray-200"}`}
-              key={index + 1}
-              onClick={()=>paginate(index+1)}
-            >{ index+1}</button>
-          ))
-        }
+        {Array.from({
+          length: Math.ceil(filteredItems.length / itemsPerPage),
+        }).map((_, index) => (
+          <button
+            className={`px-3 py-1 mx-1 rounded-full ${
+              currentPage === index + 1 ? "bg-first text-white" : "bg-gray-200"
+            }`}
+            key={index + 1}
+            onClick={() => paginate(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   );

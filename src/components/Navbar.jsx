@@ -139,11 +139,11 @@ const Navbar = () => {
           {/* contact btn */}
           <button
             onClick={() => document.getElementById("my_modal_5").showModal()}
-            className="btn bg-green flex items-center gap-2 text-white rounded-full px-6"
+            className="btn bg-first flex items-center gap-2 text-white rounded-full px-6"
           >
             <FaRegUser /> Login
           </button>
-         <Modal/>
+          <Modal />
         </div>
       </div>
     </header>
