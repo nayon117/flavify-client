@@ -68,9 +68,7 @@ const Signup = () => {
             >
               SignIn Now
             </button>
-          
-                  </p>
-                 
+          </p>
         </form>
 
         {/* social btns */}
@@ -85,8 +83,8 @@ const Signup = () => {
             <FaGithub />
           </button>
         </div>
-          </div>
-          <Modal />
+      </div>
+      <Modal />
     </div>
   );
 };
